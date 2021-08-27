@@ -8,17 +8,22 @@ var articles = [
     {articleName: "Headphones", articleCost: 100},
 ];
 
-var filtered = articles.filter(function(article) {
-    return article.articleCost <= 500;
+var findArticle = articles.find(function(article) {
+    return article.articleName === "Laptop";
 });
 
-
-function filterByArgument(arg) {
-    return articles.filter(function(article) {
-        return article.articleCost <= arg;
+function findArticleBy(artName) {
+    return articles.find(function(article) {
+        return article.articleName.toLowerCase() == artName.toLowerCase();
     });
 }
 
-var articlesName = articles.map(function(article) {
-    return article.articleName;
+function printList() {
+    articles.forEach(function(article) {
+        console.log(article.articleName);
+    });
+}
+
+var cheapArticles = articles.some(function(article) {
+    return article.articleCost <= 250;
 });
