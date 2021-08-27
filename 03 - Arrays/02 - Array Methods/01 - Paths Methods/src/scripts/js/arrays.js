@@ -18,3 +18,7 @@ function filterByArgument(arg) {
         return article.articleCost <= arg;
     });
 }
+
+var articlesName = articles.map(function(article) {
+    return article.articleName;
+});
